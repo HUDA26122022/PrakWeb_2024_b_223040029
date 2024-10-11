@@ -8,3 +8,6 @@ Catatan :
 4. Method ()
 - merepresentasikan perilaku dari sebuah object
 - fuction yang ada di dalam object
+
+5. Construstor
+- method spesial dimana dapat dijalankan secara otomatid

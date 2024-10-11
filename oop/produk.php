@@ -16,6 +16,7 @@ class produk{
     //     return "Hello World!";
     // }
 
+    
     public function getLabel(){
         return "$this->judul, Rp $this->harga";
     }
@@ -37,6 +38,8 @@ class produk{
 // echo "<br>";
 // echo $produk3 -> getLabel();
 
+
+//intsansiasi
 //komik
 $produk3 = new produk();
 $produk3->judul = "Naruto";
