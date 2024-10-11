@@ -1,0 +1,10 @@
+Catatan :
+
+3. Properti (data)
+- merepresentasikan data/ keadaan dari sebuah object
+- variabel yang ada di dalam object (member variabel(disebut Properti))
+- ketika ingin menimpa properti harus dengan nama objek yang sama
+
+4. Method ()
+- merepresentasikan perilaku dari sebuah object
+- fuction yang ada di dalam object
