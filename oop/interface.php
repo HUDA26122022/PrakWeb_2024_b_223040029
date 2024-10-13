@@ -1,9 +1,12 @@
 <?php 
 
+interface InfoProduk{
+    public function getInfoLengkap();
+}
 
 abstract class produk{
     //property
-    private $judul ,
+    protected $judul ,
             $penulis ,
             $penerbit,
             $diskon,
@@ -67,18 +70,15 @@ abstract class produk{
         return "$this->penulis, $this->penerbit";
     }
 
-    abstract function getInfoLengkap();
+    abstract public function getInfo();
     
-    public function getInfo(){
-        $str = "{$this->getlabel()} (Rp. {$this->harga})";
-        return $str;
-    }
+    
     
 }
 
 //kelas chaild
 //komik
-class komik extends produk {
+class komik extends produk implements InfoProduk{
     public $jmlhHalaman;
 
     
@@ -98,6 +98,11 @@ class komik extends produk {
     $this->jmlhHalaman = $jmlhHalaman;
     }
     
+    public function getInfo(){
+        $str = "{$this->getlabel()} (Rp. {$this->harga})";
+        return $str;
+    }
+
     public function getInfoLengkap(){
         $str = "Komik : {$this->getJudul()} {$this->getInfo()} - {$this->jmlhHalaman} Halaman."; // this adalah instansiasi yang bersangkutan
         return $str;
@@ -105,7 +110,7 @@ class komik extends produk {
     
 }
 
-class Game extends produk {
+class Game extends produk implements InfoProduk {
     public $waktuMain;
     
         public function __construct(
@@ -125,6 +130,11 @@ class Game extends produk {
 
     public function setDiskon($diskon){//mengatur nilai
         $this->diskon = $diskon;
+    }
+
+    public function getInfo(){
+        $str = "{$this->getlabel()} (Rp. {$this->harga})";
+        return $str;
     }
 
     public function getInfoLengkap(){
