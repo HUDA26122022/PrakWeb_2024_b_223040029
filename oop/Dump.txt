@@ -16,3 +16,5 @@ Catatan :
 6. inheritance
 - menciptakan hierarki antar kelas (parent dan child)
 - Child class,  mewarisi semua properti ke parent
+
+7.

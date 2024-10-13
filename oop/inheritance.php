@@ -27,7 +27,25 @@ class produk{
     }
 
     public function getInfoLengkap(){
-        $str = "{$this->tipe} : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga})";
+        $str = " {$this->judul} | {$this->getlabel()} (Rp. {$this->harga})";
+        return $str;
+    }
+    
+}
+
+//komik
+class komik extends produk {
+    public function getInfoLengkap(){
+        $str = "Komik : {$this->judul} | ". parent::getInfoLengkap()." - {$this->jmlhHalaman} Halaman."; // this adalah instansiasi yang bersangkutan
+        return $str;
+    }
+    
+}
+
+class Game extends produk {
+    public function getInfoLengkap(){
+        $str = "Game : {$this->judul} | ". parent::getInfoLengkap()." - {$this->jmlhWaktu} Jam.";
+        return $str;
     }
     
 }
@@ -42,29 +60,13 @@ class CetakInfoBuku {
 
 }
 
-//komik
-class komik extends produk {
-    public function getInfoLengkap(){
-        $str = "Komik : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga}) - {$this->jmlhHalaman} Halaman.";
-        return $str;
-    }
-    
-}
-
-class Game extends produk {
-    public function getInfoLengkap(){
-        $str = "Komik : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga}) - {$this->jmlhWaktu} Jam.";
-        return $str;
-    }
-    
-}
 
 //intsansiasi
 
 $produk1 = new komik("Naruto", "Ahmad", "Gramedia", 30000, 100, 0);//komik
 $produk2 = new Game("Minecraft", "Mojang", "Mojang", 99000, 0, 50);//game
 
-echo $komik->getInfoLengkap();
+echo $produk1->getInfoLengkap();
 echo "<br>";
-echo $Game->getInfoLengkap();
+echo $produk2->getInfoLengkap();
 ?>
