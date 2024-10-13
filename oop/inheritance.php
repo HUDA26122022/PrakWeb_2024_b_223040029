@@ -69,4 +69,5 @@ $produk2 = new Game("Minecraft", "Mojang", "Mojang", 99000, 0, 50);//game
 echo $produk1->getInfoLengkap();
 echo "<br>";
 echo $produk2->getInfoLengkap();
+
 ?>
