@@ -8,20 +8,18 @@ class produk{
             $penerbit,
             $harga,
             $jmlhHalaman, // untuk game
-            $jmlhWaktu, //untuk komik
-            $tipe;
+            $jmlhWaktu; //untuk komik
 
 
     
     //construktor
-    public function __construct( $judul, $penulis, $penerbit, $harga, $jmlhHalaman, $jmlhWaktu, $tipe){ //didalam kurung adalah variabel lokal
+    public function __construct( $judul, $penulis, $penerbit, $harga, $jmlhHalaman, $jmlhWaktu, ){ //didalam kurung adalah variabel lokal
          $this->judul = $judul;
          $this->penulis = $penulis;
          $this->penerbit = $penerbit;
          $this->harga = $harga;
          $this->jmlhHalaman = $jmlhHalaman;
          $this->jmlhWaktu = $jmlhWaktu;
-         $this->tipe = $tipe;
     }
     
     public function getLabel(){ //method
@@ -30,12 +28,6 @@ class produk{
 
     public function getInfoLengkap(){
         $str = "{$this->tipe} : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga})";
-        if ($this->tipe == "Komik"){
-            $str .= " - {$this->jmlhHalaman} Halaman.";
-        }else if ($this->tipe == "Game"){
-            $str .= " - {$this->jmlhWaktu} jam.";
-        }
-        return $str;
     }
     
 }
@@ -50,14 +42,29 @@ class CetakInfoBuku {
 
 }
 
+//komik
+class komik extends produk {
+    public function getInfoLengkap(){
+        $str = "Komik : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga}) - {$this->jmlhHalaman} Halaman.";
+        return $str;
+    }
+    
+}
 
+class Game extends produk {
+    public function getInfoLengkap(){
+        $str = "Komik : {$this->judul} | {$this->getlabel()} (Rp. {$this->harga}) - {$this->jmlhWaktu} Jam.";
+        return $str;
+    }
+    
+}
 
 //intsansiasi
 
-$produk1 = new produk("Naruto", "Ahmad", "Gramedia", 30000, 100, 0, "Komik");//komik
-$produk2 = new produk("Minecraft", "Mojang", "Mojang", 99000, 0, 50, "Game");//game
+$produk1 = new komik("Naruto", "Ahmad", "Gramedia", 30000, 100, 0);//komik
+$produk2 = new Game("Minecraft", "Mojang", "Mojang", 99000, 0, 50);//game
 
-echo $produk1->getInfoLengkap();
+echo $komik->getInfoLengkap();
 echo "<br>";
-echo $produk2->getInfoLengkap();
+echo $Game->getInfoLengkap();
 ?>
