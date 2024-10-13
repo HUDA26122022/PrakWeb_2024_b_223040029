@@ -23,3 +23,15 @@ getter // melihat nilai
 
 8. static
  nilai static akan selalu tetap meskipun object di instansiasi berulangkali
+
+9. Constant
+
+magic Constant
+- __LINE__ (untuk mengetahui line/ baris ke berapa).
+- __FILE__ (UNTUK MENGETAHUI NAMA FILE)
+- __DIR__
+- __FUNCTION__
+- __CLASS__
+- __TRAIT__
+- __METHOD__
+- __NAMESPACE__
