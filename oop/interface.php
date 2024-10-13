@@ -6,7 +6,8 @@ interface InfoProduk{
 
 abstract class produk{
     //property
-    protected $judul ,
+    protected
+     $judul ,
             $penulis ,
             $penerbit,
             $diskon,
