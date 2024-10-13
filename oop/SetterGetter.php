@@ -3,12 +3,12 @@
 
 class produk{
     //property
-    public $judul ,
+    private $judul ,
             $penulis ,
-            $penerbit;
+            $penerbit,
+            $diskon,
+            $harga;
 
-        protected $diskon = 0;
-        private  $harga;
 
 
     
@@ -21,9 +21,48 @@ class produk{
 
     }
     
-    public function getHarga(){// melihat nilai
-        return $this->harga - ($this->harga * $this->diskon/100);
+    public function setJudul($judul) {
+        $this->judul = $judul;
     }
+
+    public function getJudul(){
+        return $this->judul;
+    }
+
+    public function setPenulis($penulis) {
+        $this->penulis = $penulis;
+    }
+
+    public function getPenulis(){
+        return $this->penulis;
+    }
+
+    public function setPenerbit($penerbit) {
+        $this->penerbit = $penerbit;
+    }
+
+    public function getPenerbit(){
+        return $this->penerbit;
+    }
+
+    public function setHarga($harga) {
+        $this->harga = $harga;
+    }
+
+    public function getHarga(){
+        return $this->harga - ($this->harga * $this->diskon /100);
+    }
+
+    public function setDiskon($diskon) {
+        $this->diskon = $diskon;
+    }
+
+    public function getDiskon(){
+        return $this->diskon;
+    }
+
+
+
     public function getLabel(){ //method
         return "$this->penulis, $this->penerbit";
     }
@@ -58,7 +97,7 @@ class komik extends produk {
     }
     
     public function getInfoLengkap(){
-        $str = "Komik : {$this->judul} | ". parent::getInfoLengkap()." - {$this->jmlhHalaman} Halaman."; // this adalah instansiasi yang bersangkutan
+        $str = "Komik : ".parent::getJudul(). parent::getInfoLengkap()." - {$this->jmlhHalaman} Halaman."; // this adalah instansiasi yang bersangkutan
         return $str;
     }
     
@@ -82,12 +121,12 @@ class Game extends produk {
             $this->waktuMain = $waktuMain;
         }
 
-    public function setDiskon($diskon){
+    public function setDiskon($diskon){//mengatur nilai
         $this->diskon = $diskon;
     }
 
     public function getInfoLengkap(){
-        $str = "Game : {$this->judul} | ". parent::getInfoLengkap()." - {$this->waktuMain} Jam.";
+        $str = "Game ".parent::getJudul(). parent::getInfoLengkap()." - {$this->waktuMain} Jam.";
         return $str;
     }
     
@@ -105,7 +144,7 @@ class CetakInfoBuku {
 
 
 //intsansiasi
-$produk1 = new komik("Naruto", "Ahmad", "Gramedia", 30000, 100,);//komik
+$produk1 = new komik("Naruto", "Ahmad", "Gramedia", 30000, 200,);//komik
 $produk2 = new Game("Minecraft", "Mojang", "Kotak", 99000, 50);//game
 
 echo $produk1->getInfoLengkap();
@@ -113,6 +152,10 @@ echo "<br>";
 echo $produk2->getInfoLengkap();
 echo "<hr>";
 
-$produk2->setDiskon(50);
-echo $produk2->getHarga();
+$produk2->setJudul("Ahmad mulia huda");
+echo $produk2->getJudul();
+echo "<hr>";
+
+$produk1->setDiskon(50);
+echo $produk1->getHarga();
 ?>

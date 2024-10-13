@@ -17,4 +17,6 @@ Catatan :
 - menciptakan hierarki antar kelas (parent dan child)
 - Child class,  mewarisi semua properti ke parent
 
-7.
+7.setter dan getter
+setter // mengatur nilai
+getter // melihat nilai
