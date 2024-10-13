@@ -20,3 +20,6 @@ Catatan :
 7.setter dan getter
 setter // mengatur nilai
 getter // melihat nilai
+
+8. static
+ nilai static akan selalu tetap meskipun object di instansiasi berulangkali
