@@ -17,15 +17,15 @@ class produk{
     }
     
     public function getLabel(){ //method
-        return "$this->judul, Rp $this->harga";
+        return "$this->judul, $this->penerbit";
     }
 }
 
 
 //mencetak seluruh informasi produk
 class CetakInfoBuku {
-    public function cetak ( Produk $produk ){
-        $str = "{$produk -> judul} | {$produk-> getLabel()} (Rp. {$produk -> harga}) ";
+    public function cetak ( Produk$produk ){
+        $str = "{$produk -> judul} | {$produk-> getLabel()} (Rp. {$produk -> harga})";
         return $str;
     }
 

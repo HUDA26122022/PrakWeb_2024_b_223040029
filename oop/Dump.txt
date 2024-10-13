@@ -11,3 +11,8 @@ Catatan :
 
 5. Construstor
 - method spesial dimana dapat dijalankan secara otomatid
+
+
+6. inheritance
+- menciptakan hierarki antar kelas (parent dan child)
+- Child class,  mewarisi semua properti ke parent
